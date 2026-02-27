@@ -1,0 +1,202 @@
+@use 'sass:color';
+
+// Variables for consistent theming
+$primary-blue: #3264d6; // Matches the "Continue" button blue
+$disabled-blue: #a0bbf0;
+$text-dark: #1a1a1a;
+$text-light: #666666;
+$border-color: #d1d5db;
+$bg-color: #ffffff;
+
+:host {
+  display: block;
+  height: 100%;
+  background-color: $bg-color;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+.login-wrapper {
+  display: flex;
+  flex-direction: column;
+  padding: 24px 20px;
+  height: 100%;
+  box-sizing: border-box;
+}
+
+// Brand Header Styling 
+.brand-header {
+  margin-top: 40px; // Gives space from the top notch/status bar
+  margin-bottom: 60px;
+  
+  h1 {
+    font-size: 18px;
+    color: $text-dark;
+    font-weight: 500;
+    margin: 0;
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+
+    span {
+      font-size: 22px;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      text-transform: uppercase; // Matches the "aMaDEUS" aesthetic 
+    }
+  }
+}
+
+// Login Content Area
+.login-content {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+
+  // "Enter your PIN" heading [cite: 68]
+  h2 {
+    font-size: 22px;
+    font-weight: 600;
+    color: $text-dark;
+    margin-bottom: 24px;
+    margin-top: 0;
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+// Input Field Styling [cite: 70]
+.input-container {
+  margin-bottom: 24px;
+
+  .pin-input {
+    width: 100%;
+    padding: 16px 14px;
+    font-size: 16px;
+    color: $text-dark;
+    background-color: #fafafa;
+    border: 1px solid $border-color;
+    border-radius: 8px;
+    box-sizing: border-box;
+    transition: border-color 0.2s ease;
+    outline: none;
+
+    &:focus {
+      border-color: $primary-blue;
+      background-color: #ffffff;
+    }
+
+    &::placeholder {
+      color: #999999;
+    }
+
+    &:disabled {
+      background-color: #f3f4f6;
+      color: #a1a1aa;
+    }
+  }
+}
+
+// Password screen wrapper
+.pwd-screen {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 66px 20px 24px;
+  box-sizing: border-box;
+}
+
+// Back button
+.back-btn {
+  background: none;
+  border: none;
+  padding: 4px;
+  cursor: pointer;
+  align-self: flex-start;
+  margin-bottom: 32px;
+  color: #111827;
+}
+
+// Avatar + name row
+.pwd-screen__user {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 40px;
+}
+
+.pwd-screen__avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: #6d28d9;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.pwd-screen__name {
+  font-size: 16px;
+  font-weight: 600;
+  color: #111827;
+}
+
+// Password input wrapper (relative, for the eye icon)
+.input-container--pwd {
+  position: relative;
+
+  .pin-input {
+    padding-right: 44px;
+  }
+}
+
+.input-container--pin {
+  position: relative;
+
+  .pin-input {
+    padding-right: 44px;
+  }
+}
+
+.eye-btn {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+  display: flex;
+  align-items: center;
+}
+
+// Continue Button [cite: 71]
+.continue-btn {
+  width: 100%;
+  padding: 16px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #ffffff;
+  background-color: $primary-blue;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+
+  // Enabled only when PIN is valid length 
+  &:disabled {
+    background-color: $disabled-blue;
+    cursor: not-allowed;
+  }
+
+  &:active:not(:disabled) {
+    background-color: color.adjust($primary-blue, $lightness: -10%);
+  }
+}

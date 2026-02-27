@@ -1,0 +1,80 @@
+
+// Include theming for Angular Material with `mat.theme()`.
+// This Sass mixin will define CSS variables that are used for styling Angular Material
+// components according to the Material 3 design spec.
+// Learn more about theming and how to use it for your application's
+// custom components at https://material.angular.dev/guide/theming
+@use '@angular/material' as mat;
+
+:root,
+:root.theme-light {
+  --app-bg: #f3f4f6;
+  --app-surface: #ffffff;
+  --app-surface-2: #f8fafc;
+  --app-text: #111827;
+  --app-text-muted: #6b7280;
+  --app-border: #e5e7eb;
+  --app-primary: #1d4ed8;
+  --app-backdrop: rgba(0, 0, 0, 0.38);
+  --font-size-xs: 12px;
+  --font-size-sm: 14px;
+  --font-size-md: 16px;
+  --font-size-lg: 20px;
+  --font-size-xl: 32px;
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+}
+
+:root.theme-dark {
+  --app-bg: #0b1220;
+  --app-surface: #111827;
+  --app-surface-2: #1f2937;
+  --app-text: #e5e7eb;
+  --app-text-muted: #9ca3af;
+  --app-border: #374151;
+  --app-primary: #60a5fa;
+  --app-backdrop: rgba(0, 0, 0, 0.55);
+}
+
+html {
+  height: 100%;
+  @include mat.theme((
+    color: (
+      primary: mat.$azure-palette,
+      tertiary: mat.$blue-palette,
+    ),
+    typography: Roboto,
+    density: 0,
+  ));
+}
+
+body {
+  // Default the application to a light color theme. This can be changed to
+  // `dark` to enable the dark color theme, or to `light dark` to defer to the
+  // user's system settings.
+  color-scheme: light;
+
+  // Set a default background, font and text colors for the application using
+  // Angular Material's system-level CSS variables. Learn more about these
+  // variables at https://material.angular.dev/guide/system-variables
+  background-color: var(--app-bg);
+  color: var(--app-text);
+  font: var(--mat-sys-body-medium);
+
+  // Reset the user agent margin.
+  margin: 0;
+  height: 100%;
+  transition: background-color 180ms ease, color 180ms ease;
+  font-size: var(--font-size-sm);
+  line-height: 1.4;
+}
+
+/* Ensure the Angular root component fills the entire viewport */
+app-root {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+/* You can add global styles to this file, and also import other style files */

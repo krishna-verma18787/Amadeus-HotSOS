@@ -1,0 +1,1 @@
+import{k as s,u as i}from"./chunk-WGFYM5RO.js";var n=class e{isOpen=i(!1);open(){this.isOpen.set(!0)}close(){this.isOpen.set(!1)}toggle(){this.isOpen.update(t=>!t)}static \u0275fac=function(o){return new(o||e)};static \u0275prov=s({token:e,factory:e.\u0275fac,providedIn:"root"})};export{n as a};

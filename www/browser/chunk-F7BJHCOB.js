@@ -1,0 +1,1 @@
+import{d as r,k as o,n as s,oa as i}from"./chunk-WGFYM5RO.js";var p=class t{http=s(i);getGuests(){return this.http.get("/assets/mock/guests.json").pipe(r(e=>e.guests))}static \u0275fac=function(a){return new(a||t)};static \u0275prov=o({token:t,factory:t.\u0275fac,providedIn:"root"})};export{p as a};

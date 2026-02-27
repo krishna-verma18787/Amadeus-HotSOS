@@ -1,0 +1,1 @@
+import{k as o,u as e}from"./chunk-WGFYM5RO.js";var r=class t{isOpen=e(!1);title=e("Error");message=e("");show(i,s="Error"){this.title.set(s),this.message.set(i),this.isOpen.set(!0)}close(){this.isOpen.set(!1)}static \u0275fac=function(s){return new(s||t)};static \u0275prov=o({token:t,factory:t.\u0275fac,providedIn:"root"})};export{r as a};

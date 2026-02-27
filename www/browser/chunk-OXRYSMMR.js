@@ -1,0 +1,1 @@
+import{d as t,k as o,n as i,oa as s}from"./chunk-WGFYM5RO.js";var c=class r{http=i(s);getOrders(){return this.http.get("/assets/mock/service-orders.json").pipe(t(e=>e.orders))}static \u0275fac=function(p){return new(p||r)};static \u0275prov=o({token:r,factory:r.\u0275fac,providedIn:"root"})};export{c as a};

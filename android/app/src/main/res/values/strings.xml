@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Amadeus HotSOS</string>
+    <string name="title_activity_main">Amadeus HotSOS</string>
+    <string name="package_name">com.amadeus.hotsos</string>
+    <string name="custom_url_scheme">com.amadeus.hotsos</string>
+</resources>
